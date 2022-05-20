@@ -16,7 +16,9 @@ app.get('/', function(request, response){
 app.get('/pokemon', function (request,response){
     response.render('Index', {pokemon} );
 })
-
+app.get('/pokemon/:id', function (request, response){
+    response.send(request.params.id);
+})
 
 
 
