@@ -2,11 +2,19 @@ const express=require('express');
 const app=express();
 const port=3000;
 const pokemon=require('./models/pokemon');
+
+app.set('view engine', 'jsx');
+
+
+  
+app.engine('jsx', require('express-react-views').createEngine());
+
+
 app.get('/', function(request, response){
     response.send('Welcome to the Pokemon App!');
 });
 app.get('/pokemon', function (request,response){
-    response.send(pokemon);
+    response.render('Index', {pokemon} );
 })
 
 
