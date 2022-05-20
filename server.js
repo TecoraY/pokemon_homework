@@ -19,6 +19,9 @@ app.get('/pokemon', function (request,response){
 app.get('/pokemon/:id', function (request, response){
     response.send(request.params.id);
 })
+app.get('/pokemon/:id', function (request, response) {
+    response.render('Show', { pokemon: pokemon[req.params.id] });
+});
 
 
 
